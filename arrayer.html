@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrayer</title>
+</head>
+<body>
+    <ul id="varer"> </ul>
+    <h2>Skoinformasjon</h2>
+    <p id="nikefree"></p>
+    <h2>Produktinformasjon</h2>
+    <p id="prodinfo"></p>
+
+    <script>
+        //Handleliste. Indexert array (får automatisk index/plassangivelse, som begynner på 0)
+        var handleliste = ["Brød", "Egg", "Sjokolade"];
+        console.log(handleliste);
+        document.getElementById("varer").innerHTML = "<li>" + handleliste[0] + "</li><li>" + handleliste[1] + "</li><li>" + handleliste[2] + "</li>";
+
+        //Joggesko. Assosiativ array (vi må sette nøkkel selv, og hver nøkkel er referanse til en verdi)
+        var joggesko = {merke: "Nike", modell: "Free", pris: 499}
+        document.getElementById("nikefree").innerHTML = joggesko["merke"] + " " + joggesko["modell"] + ". Pris: " + joggesko["pris"] +",-";
+
+        //Multidimensjonal array.
+        var produkter = [
+            {merke: "Nike", modell: "Free", pris: 499},
+            {merke: "Adidas", modell: "Run", pris: 699}
+        ]; 
+        console.log(produkter);
+        //Refere til multidimensjonal array krever flere nivåer av referanser.
+        //Her: arrayvariabel (prodinfo) - nivå 1 index - nivå 2 nøkkel:
+        document.getElementById("prodinfo").innerHTML = produkter[1]["merke"];
+    </script>
+</body>
+</html>
